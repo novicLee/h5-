@@ -2,8 +2,7 @@
  * 基础路由
  * @type { *[] }
  */
-export const constantRouterMap = [
-  {
+export const constantRouterMap = [{
     path: '/',
     component: () => import('@/views/layouts/index'),
     redirect: '/home',
@@ -11,19 +10,24 @@ export const constantRouterMap = [
       title: '首页',
       keepAlive: false
     },
-    children: [
-      {
+    children: [{
         path: '/home',
         name: 'Home',
         component: () => import('@/views/home/index'),
-        meta: { title: '首页', keepAlive: false }
+        meta: {
+          title: '首页',
+          keepAlive: false
+        }
       },
       {
         path: '/about',
         name: 'About',
         component: () => import('@/views/home/about'),
-        meta: { title: '关于我', keepAlive: false }
+        meta: {
+          title: '关于我',
+          keepAlive: false
+        }
       }
     ]
-  }
+  },
 ]

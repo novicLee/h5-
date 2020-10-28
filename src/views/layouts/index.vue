@@ -6,13 +6,24 @@
       </keep-alive>
       <router-view v-else></router-view>
     </div>
-    <div class="layout-footer">
+    <!-- <div class="layout-footer">
       <TabBar :data="tabbars" @change="handleChange" />
-    </div>
+    </div> -->
+    <van-nav-bar
+      title="标题"
+      left-text="返回"
+      right-text="按钮"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <!-- </van-nav-bar> -->
   </div>
 </template>
 
 <script>
+import { Toast } from 'vant';
+import { NavBar } from 'vant';
 import TabBar from '@/components/TabBar'
 export default {
   name: 'AppLayout',
@@ -42,7 +53,13 @@ export default {
   methods: {
     handleChange(v) {
       console.log('tab value:', v)
-    }
+    },
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    },
   }
 }
 </script>
