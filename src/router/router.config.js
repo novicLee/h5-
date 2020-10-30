@@ -7,24 +7,34 @@ export const constantRouterMap = [{
     component: () => import('@/views/layouts/index'),
     redirect: '/home',
     meta: {
-      title: '首页',
+      title: '客户中心',
       keepAlive: false
     },
-    children: [{
+    children: [
+      {
         path: '/home',
         name: 'Home',
         component: () => import('@/views/home/index'),
         meta: {
-          title: '首页',
+          title: '客户中心',
           keepAlive: false
         }
       },
       {
-        path: '/about',
-        name: 'About',
-        component: () => import('@/views/home/about'),
+        path: '/myCar',
+        name: 'myCar',
+        component: () => import('@/views/myCar/index'),
         meta: {
-          title: '关于我',
+          title: '我的车辆',
+          keepAlive: false
+        }
+      },
+      {
+        path: '/carDetail',
+        name: 'carDetail',
+        component: () => import('@/views/carDetail'),
+        meta: {
+          title: '车辆详情',
           keepAlive: false
         }
       }

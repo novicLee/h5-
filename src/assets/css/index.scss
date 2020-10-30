@@ -11,3 +11,17 @@ body .app {
 .app-container {
   padding-bottom: 50px;
 }
+// ------------自定义------------------------
+.container {
+  position:relative;
+}
+
+.navBar {
+  position:fixed;top:0px;width:100%
+}
+
+.top-margin {
+  margin-top: 50px;
+}
+
+
