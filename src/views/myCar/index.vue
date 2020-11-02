@@ -11,6 +11,12 @@
       <div class="top-margin">
         <cell-carinfo></cell-carinfo>
       </div>
+
+
+      <div class="bottomBtn">
+        <!-- <van-button type="primary" color="#ffcd00" style="width:100%">确认</van-button> -->
+        <van-button type="primary" color="#ffcd00" block @click="confirmBtn">确认</van-button>
+      </div>
     </div>
 </template>
 
@@ -31,6 +37,11 @@ export default {
     methods: {
       onClickLeft () {
         this.$router.go(-1)
+      },
+      confirmBtn () {
+        this.$router.push({
+          name : 'Home'
+        })
       }
     },
     created() {
@@ -46,4 +57,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+/deep/ .van-nav-bar__title {
+  color:#DA291C;
+  font-weight: bold;
+}
 </style>

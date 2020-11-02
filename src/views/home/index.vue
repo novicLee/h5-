@@ -18,7 +18,7 @@
         <img src="@/assets/ct.png" alt="" />
         <div style="width: calc(100% - 30px); float: right; text-align: center; height: 60px">
           <p style="height: 30px; background: #ffcd00; line-height: 30px; color: #fff; font-weight: bold">友客</p>
-          <div style="padding-left:30px;text-align:left;">
+          <div style="padding-left:30px;text-align:left;" @click="getUserInfo">
             <p>鹿暖</p>
             <p>18234209358</p>
           </div>
@@ -47,13 +47,35 @@
       </div>
     </div>
     <!-- 我的储值区块 -->
-    <van-grid :column-num="5">
+      <!-- <van-grid :column-num="5">
       <van-grid-item icon="photo-o" text="我的储值" />
       <van-grid-item icon="photo-o" text="我的卡券" />
       <van-grid-item icon="photo-o" text="我的积分" />
       <van-grid-item icon="photo-o" text="未付订单" />
       <van-grid-item icon="photo-o" text="更多服务" />
-    </van-grid>
+    </van-grid> -->
+    <div class="gridContainer">
+      <div class="gridItems">
+        <p>0.00</p>
+        <p>我的储值</p>
+      </div>
+      <div class="gridItems">
+        <p><span style="color:#DA291C;">0</span>/0</p>
+        <p>我的卡券</p>
+      </div>
+      <div class="gridItems">
+        <p>1220</p>
+        <p>我的积分</p>
+      </div>
+      <div class="gridItems">
+        <p>0</p>
+        <p>未付订单</p>
+      </div>
+      <div class="gridItems" style="border:none;">
+        <p><van-icon name="chat-o" color="#DA291C"/></p>
+        <p>更多服务</p>
+      </div>
+    </div>
 
     <div style="margin-top: 10px; padding: 10px; background: #fff">
       <div style="background: #f2f2f2; height: 80px"></div>
@@ -96,6 +118,11 @@ export default {
       this.$router.push({
         name : 'myCar'
       })
+    },
+    getUserInfo () {
+      this.$router.push({
+        name: 'userInfo'
+      })
     }
   },
   created() {},
@@ -136,5 +163,14 @@ img {
 .personInfo {
   display: flex;
   justify-content: space-between;
+}
+.gridContainer {
+  display:flex;padding:30px 20px;background:#fff;height:50px;
+  .gridItems {
+    flex:1;display:flex;justify-content:space-around;flex-direction:column;align-items:center;border-right: 0.5px solid #ccc;
+    p:first-child {
+      font-weight: bold;
+    }
+  }
 }
 </style>

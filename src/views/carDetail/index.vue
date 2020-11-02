@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
     <!-- 顶部导航栏 -->
-    <van-nav-bar title="客户中心" left-arrow @click-left="onClickLeft" style="position:fixed;top:0px;width:100%">
+    <van-nav-bar title="车辆详情" left-arrow @click-left="onClickLeft" style="position:fixed;top:0px;width:100%">
       <template #left>
         <van-icon name="arrow-left" color="#ccc" size="18" />
       </template>
@@ -9,9 +9,9 @@
 
     <carGroup :style="{'margin':'50px 0px'}"></carGroup>
 
-    <div style="position: fixed; bottom: 0px; width: 100%; background: #f2f2f2; padding: 10px">
+    <div class="bottomBtn">
       <div style="display: flex; justify-content: space-around">
-        <van-button color="#000" plain style="width: 30%" @click="callOff">取消</van-button>
+        <van-button color="#000" plain style="width: 30%" @click="onClickLeft">取消</van-button>
         <van-button style="width: 30%; color: #000; background: #ffcd00">保存</van-button>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
   },
   props: {},
   methods: {
-    callOff () {
+    onClickLeft () {
       this.$router.go(-1)
     }
   },

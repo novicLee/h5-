@@ -37,7 +37,16 @@ export const constantRouterMap = [{
           title: '车辆详情',
           keepAlive: false
         }
-      }
+      },
+      {
+        path: '/userInfo',
+        name: 'userInfo',
+        component: () => import('@/views/userInfo'),
+        meta: {
+          title: '个人信息',
+          keepAlive: false
+        }
+      },
     ]
   },
 ]
